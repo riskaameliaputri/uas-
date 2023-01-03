@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pricing table </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrap">
+<div class="table">
+<ul>
+  {% for blog in blogs %}
+<li>
+  <div class="top">
+    <h1>{{blog.title}}</h1>
+
+  <div class="bottom">
+    <p><span>5</span> {{blog.category}}</p>
+    <div class="sign">
+      <a href="{% url 'detail' blog.id %}" >detail</a>
+    </div>
+  </div>
+</li>
+{% endfor %}
+</ul>
+
+</div>
+</div>
+
+
+<button type="button" class="btn btn-light">
+				<a href="{% url 'data_baru' %}">Tambahkan data</a>
+			</button>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
